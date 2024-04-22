@@ -1,9 +1,10 @@
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cadastro {
     
-    private static List<Pessoa> listaPessoas = new ArrayList<>();
+    private static List<Pessoa> listaPessoas = new ArrayList();
     
     public static List<Pessoa> getListaPessoas() {
 
@@ -21,7 +22,7 @@ public class Cadastro {
 
         for (Pessoa pessoa : listaPessoas) {
             
-            if (pessoa.getId() == id) {
+            if (pessoa.getId().equals(id)) {
                 
                 return pessoa;
 

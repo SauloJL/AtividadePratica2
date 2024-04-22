@@ -2,6 +2,7 @@ public class Sistema {
 
     private static void Menu() {
 
+        System.out.print("______________________");
         System.out.println("\nSISTEMA HOSPITAL JAVA");
         System.out.println("1) Cadastrar Medico");
         System.out.println("2) Cadastrar Enfermeiro");
@@ -11,18 +12,11 @@ public class Sistema {
         System.out.println("6) Listar Todas as Pessoas");
         System.out.println("7) Excluir Todas as Pessoas");
         System.out.println("0) Sair");
-        System.out.print("Informe uma opção:");
+        System.out.print("\nInforme uma opção: ");
 
     }
 
     private static void verificarOp(int op) {
-
-        String id;
-        String nome;
-        String idade;
-        String setor;
-        String especialidade;
-        String diagnotisco;
 
         switch (op) {
             case 1:
@@ -63,7 +57,7 @@ public class Sistema {
 
             case 7:
 
-                excluirPessoas();
+                excluirLista();
 
                 break;
 
@@ -153,7 +147,7 @@ public class Sistema {
 
     private static void buscarId() {
 
-        System.out.println("\nBusca pelo Id");
+        System.out.println("\n--Busca pelo Id--");
 
         System.out.print("Insira o Id a ser buscado: ");
         String id = Console.lerString();
@@ -173,8 +167,8 @@ public class Sistema {
 
     private static void excluirId() {
 
-        System.out.println("\nExcluir pelo Id");
-        System.out.print("Insira o Id a ser buscado: ");
+        System.out.println("\n--Excluir pelo Id--");
+        System.out.print("Insira o Id a ser excluido: ");
         String id = Console.lerString();
 
         Pessoa pessoa = Cadastro.buscar(id);
@@ -182,6 +176,7 @@ public class Sistema {
         if (pessoa != null) {
 
             System.out.println(pessoa.toString());
+            Cadastro.getListaPessoas().remove(pessoa);
             System.out.println("\nExcluído com sucesso!");
             return;
 
@@ -193,7 +188,7 @@ public class Sistema {
 
     private static void listarPessoas() {
 
-        System.out.println("\nBuscar todos na lista");
+        System.out.println("\n--Mostrar todos na lista--");
 
         if (Cadastro.getListaPessoas().size() == 0) {
 
@@ -208,13 +203,13 @@ public class Sistema {
 
     }
 
-    private static void excluirPessoas() {
+    private static void excluirLista() {
 
-        System.out.println("\nExcluir toda a lista");
+        System.out.println("\n--Excluir todos da lista--");
 
-        if (Cadastro.getListaPessoas().size() == 0) {
+        if (Cadastro.getListaPessoas().isEmpty()) {
 
-            System.out.println("Não há pessoas cadastradas para excluir");
+            System.out.println("\nNão há pessoas cadastradas para excluir");
             return;
 
         }
@@ -225,16 +220,16 @@ public class Sistema {
 
         }
 
-        System.out.println("\nFoi excluida todas a lista!");
+        System.out.println("\nFoi excluido todos da lista!");
 
     }
 
     public static void executar() {
-        
+
         int op;
 
         do {
-            
+
             Menu();
             op = Console.lerInt();
             verificarOp(op);

@@ -1,9 +1,9 @@
 public class Paciente extends Pessoa {
-
+    
     private String diagnostico;
 
-    public Paciente() {
-
+    public Paciente(){
+        
     }
 
     public Paciente(String id, String nome, String idade, String diagnostico) {
@@ -17,6 +17,11 @@ public class Paciente extends Pessoa {
 
     public void setDiagnostico(String diagnostico) {
         this.diagnostico = diagnostico;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nDiagnostico: " + diagnostico;
     }
 
 }

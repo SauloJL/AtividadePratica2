@@ -1,13 +1,9 @@
 public class Medico extends Pessoa {
-
+    
     private String especialidade;
 
-    public Medico() {
-
-    }
-
-    public Medico(String especialidade) {
-        this.especialidade = especialidade;
+    public Medico(){
+        
     }
 
     public Medico(String id, String nome, String idade, String especialidade) {
@@ -22,5 +18,9 @@ public class Medico extends Pessoa {
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
     }
-
+    
+    @Override
+    public String toString() {
+        return super.toString() + "\nEspecialidade: " + especialidade;
+    }
 }

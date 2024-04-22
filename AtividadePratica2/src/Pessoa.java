@@ -1,9 +1,9 @@
 public class Pessoa {
-
+    
     private String id;
     private String nome;
     private String idade;
-
+    
     public Pessoa() {
 
     }
@@ -37,5 +37,13 @@ public class Pessoa {
     public void setIdade(String idade) {
         this.idade = idade;
     }
+    
+    @Override
+    public String toString() {
+        return "\nId: " + id + 
+        "\nNome: " + nome + 
+        "\nIdade: " + idade;
+    }
+
 
 }

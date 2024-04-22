@@ -1,13 +1,9 @@
 public class Enfermeiro extends Pessoa {
-
+    
     private String setor;
 
-    public Enfermeiro() {
-
-    }
-
-    public Enfermeiro(String setor) {
-        this.setor = setor;
+    public Enfermeiro(){
+        
     }
 
     public Enfermeiro(String id, String nome, String idade, String setor) {
@@ -23,4 +19,9 @@ public class Enfermeiro extends Pessoa {
         this.setor = setor;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "\nSetor: " + setor;
+    }
+    
 }

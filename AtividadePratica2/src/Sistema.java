@@ -214,11 +214,7 @@ public class Sistema {
 
         }
 
-        for (Pessoa pessoa : Cadastro.getListaPessoas()) {
-
-            Cadastro.getListaPessoas().remove(pessoa);
-
-        }
+        Cadastro.getListaPessoas().clear();
 
         System.out.println("\nFoi excluido todos da lista!");
 
